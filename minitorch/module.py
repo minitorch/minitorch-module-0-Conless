@@ -95,6 +95,9 @@ class Module:
         if key in self.__dict__["_modules"]:
             return self.__dict__["_modules"][key]
         return None
+    
+    def forward(self, *args: Any, **kwargs: Any) -> Any:
+        raise NotImplementedError("Forward is not implemented")
 
     def __call__(self, *args: Any, **kwargs: Any) -> Any:
         return self.forward(*args, **kwargs)
